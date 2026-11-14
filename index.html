@@ -80,17 +80,21 @@ h1{font-size:clamp(2.3rem,6.4vw,3.9rem);line-height:1.07;letter-spacing:-.03em;f
 .qf b{display:block;font-size:1.3rem;color:#fff;font-weight:700}
 .qf span{color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em}
 
-.hero-card{position:relative;justify-self:center}
-.ring{width:272px;height:272px;border-radius:50%;padding:6px;background:conic-gradient(var(--cyan),var(--violet),var(--green),var(--cyan));animation:spin 14s linear infinite;box-shadow:0 0 60px rgba(34,211,238,.25)}
-@keyframes spin{to{transform:rotate(360deg)}}
-.ring-inner{width:100%;height:100%;border-radius:50%;background:var(--bg2);padding:6px}
-.ring img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
-.hud{position:absolute;background:rgba(7,12,28,.85);backdrop-filter:blur(10px);border:1px solid var(--line2);border-radius:12px;padding:10px 14px;font-size:.7rem;font-family:'IBM Plex Mono';box-shadow:0 10px 34px rgba(0,0,0,.45)}
-.hud small{color:var(--muted);display:block;font-size:.6rem;letter-spacing:.1em}
-.hud b{color:var(--cyan)}
-.hud-1{top:4%;left:-8%}.hud-2{top:46%;right:-8%}.hud-3{bottom:6%;left:-4%}
-@media(max-width:980px){.hud-1,.hud-3{left:1%}.hud-2{right:1%}}
-@media(max-width:560px){.ring{width:205px;height:205px}.hud{display:none}}
+.hero-card{position:relative;justify-self:center;animation:floatY 6s ease-in-out infinite}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.portrait{position:relative;width:300px;height:372px;border-radius:26px;padding:2px;background:linear-gradient(155deg,var(--cyan) 0%,var(--violet) 45%,var(--green) 100%);box-shadow:0 24px 70px rgba(34,211,238,.18),0 0 0 1px rgba(255,255,255,.05) inset}
+.portrait-inner{width:100%;height:100%;border-radius:24px;background:var(--bg2);padding:6px}
+.portrait img{width:100%;height:100%;object-fit:cover;border-radius:19px;display:block;filter:saturate(1.05)}
+.orbit{position:absolute;width:410px;height:410px;border-radius:50%;border:1px dashed rgba(148,183,255,.22);top:50%;left:50%;transform:translate(-50%,-50%);animation:orbSpin 30s linear infinite;pointer-events:none}
+@keyframes orbSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.orbit::after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--green);top:-5px;left:50%;box-shadow:0 0 14px rgba(52,211,153,.9)}
+.corner{position:absolute;width:34px;height:34px;border:2px solid var(--cyan);opacity:.85;pointer-events:none}
+.corner.tl{top:-9px;left:-9px;border-right:none;border-bottom:none;border-radius:14px 0 0 0}
+.corner.tr{top:-9px;right:-9px;border-left:none;border-bottom:none;border-radius:0 14px 0 0}
+.corner.bl{bottom:-9px;left:-9px;border-right:none;border-top:none;border-radius:0 0 0 14px}
+.corner.br{bottom:-9px;right:-9px;border-left:none;border-top:none;border-radius:0 0 14px 0}
+.live{position:absolute;top:16px;right:16px;width:12px;height:12px;border-radius:50%;background:var(--green);animation:pulse 1.5s infinite}
+@media(max-width:560px){.portrait{width:232px;height:290px}.orbit{width:320px;height:320px}}
 
 /* ========= SECTIONS ========= */
 section{padding:80px 0;position:relative}
@@ -253,10 +257,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
       </div>
     </div>
     <div class="hero-card">
-      <div class="ring"><div class="ring-inner"><img src="assets/profile.jpg" alt="Hassan AIT ALLOU"></div></div>
-      <div class="hud hud-1"><small>PFA 2026</small><b>Capgemini Engineering</b></div>
-      <div class="hud hud-2"><small>LEADERSHIP</small><b>VP — InTech Club FSTE</b></div>
-      <div class="hud hud-3"><small>HULT PRIZE</small><b>Deputy Campus Director</b></div>
+      <div class="orbit"></div>
+      <div class="portrait">
+        <div class="portrait-inner"><img src="assets/profile.jpg" alt="Hassan AIT ALLOU"></div>
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <span class="live"></span>
+      </div>
     </div>
   </div></div>
 </header>
