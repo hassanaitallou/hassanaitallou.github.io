@@ -1,549 +1,507 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Hassan AIT ALLOU | Embedded Systems & IoT Engineer</title>
-<meta name="description" content="Embedded systems and IoT engineer: ESP32, Arduino, Python, MATLAB/Simulink, predictive maintenance with IoT + MQTT + AI. COCIA 2026, Rally IA Future Lab finalist, Capgemini Engineering.">
-<meta property="og:title" content="Hassan AIT ALLOU — Embedded Systems & IoT Engineer">
-<meta property="og:description" content="ESP32, IoT, predictive maintenance, MQTT/AI, COCIA 2026, Rally IA Future Lab. Final-year embedded systems engineer at Capgemini Engineering.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hassanaitallou.github.io/">
+<title>Hassan AIT ALLOU | Ingénieur Systèmes Embarqués & IoT</title>
+<meta name="description" content="Ingénieur Systèmes Embarqués & IoT : ESP32/Python/MATLAB, maintenance prédictive IA+MQTT, COOIA 2026 et Rally IA Future Lab, Capgemini Engineering, Hult Prize, InTech Club.">
+<meta property="og:title" content="Hassan AIT ALLOU — Ingénieur SEIT & IoT">
+<meta property="og:description" content="Portfolio — Capgemini Engineering · Rally IA Future Lab · COCIA 2026 · maintenance prédictive moteurs électriques avec IA.">
 <meta property="og:image" content="https://hassanaitallou.github.io/assets/profile.jpg">
+<meta property="og:url" content="https://hassanaitallou.github.io/">
+<meta property="og:type" content="website">
 <meta name="theme-color" content="#05070f">
-<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="apple-touch-icon" href="assets/profile.jpg">
 <link rel="icon" href="assets/profile.jpg">
+<link rel="apple-touch-icon" href="assets/profile.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#05070f; --bg2:#0a0f22; --card:#0e1630; --card2:#141f42;
-  --line:rgba(148,183,255,.1); --line2:rgba(148,183,255,.2);
-  --cyan:#22d3ee; --green:#34d399; --violet:#818cf8; --amber:#fbbf24;
+  --bg:#05070f; --bg2:#0a0f22; --bg3:#0d1430;
+  --card:#0f1836; --card2:#16224a;
+  --line:rgba(148,183,255,.12); --line2:rgba(148,183,255,.24);
+  --cyan:#22d3ee; --green:#34d399; --violet:#818cf8; --amber:#fbbf24; --pink:#f472b6;
   --text:#e9edfb; --muted:#8b97bb;
 }
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--cyan);color:#04121c}
 a{color:var(--cyan);text-decoration:none}
 .mono{font-family:'IBM Plex Mono',monospace}
 .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
-::selection{background:var(--cyan);color:#04121c}
-::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar{width:9px;height:9px}
 ::-webkit-scrollbar-track{background:var(--bg2)}
-::-webkit-scrollbar-thumb{background:#223055;border-radius:6px}
-::-webkit-scrollbar-thumb:hover{background:var(--cyan)}
+::-webkit-scrollbar-thumb{background:#24335e;border-radius:6px}
 
-/* CURSOR GLOW */
-#glow{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(34,211,238,.07) 0%,transparent 65%);transform:translate(-50%,-50%);left:50%;top:50%}
+#glow{position:fixed;width:400px;height:400px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(34,211,238,.08) 0%,transparent 65%);transform:translate(-50%,-50%);left:50%;top:50%}
+#progress{position:fixed;top:0;left:0;height:2.5px;width:0%;z-index:200;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--green));transition:width .1s linear}
 
-/* NAV */
-nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(5,7,15,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+/* ========= NAV ========= */
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(5,7,15,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
-.logo{font-weight:800;letter-spacing:.04em;font-size:1rem}
+.logo{font-weight:800;letter-spacing:.03em;font-size:1rem;display:flex;align-items:center;gap:10px}
+.logo-mark{width:30px;height:30px;border:1px solid var(--line2);border-radius:8px;display:grid;place-items:center;font-size:.78rem;color:var(--cyan);font-family:'IBM Plex Mono';background:var(--bg2)}
 .logo b{color:var(--cyan)}
-nav ul{display:flex;gap:24px;list-style:none}
-nav ul a{color:var(--muted);font-size:.82rem;font-weight:600;position:relative}
-nav ul a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--cyan);transition:width .3s}
+nav ul{display:flex;gap:22px;list-style:none}
+nav ul a{color:var(--muted);font-size:.8rem;font-weight:600}
 nav ul a:hover{color:#fff}
-nav ul a:hover::after{width:100%}
-.gh-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);color:#fff;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600;transition:all .25s}
+.gh-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);color:#fff;padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;transition:.25s}
 .gh-btn:hover{border-color:var(--cyan);box-shadow:0 0 18px rgba(34,211,238,.25)}
 
-/* HERO */
+/* ========= HERO ========= */
 header{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
-#bannerBg{position:absolute;inset:0;background:url('assets/banner.jpg') center/cover no-repeat;opacity:.38;filter:saturate(.75)}
-#bannerBg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(5,7,15,.94) 0%,rgba(5,7,15,.78) 45%,rgba(5,7,15,.25) 100%)}
-#gridFx{position:absolute;inset:0;background-image:linear-gradient(rgba(94,150,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(94,150,255,.06) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse at 30% 50%,black 30%,transparent 75%)}
-header .wrap{position:relative;z-index:2;padding-top:80px;padding-bottom:60px}
+#bannerBg{position:absolute;inset:0;background:url('assets/banner.jpg') center/cover no-repeat;opacity:.32;filter:saturate(.7)}
+#bannerBg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(5,7,15,.96) 0%,rgba(5,7,15,.82) 45%,rgba(5,7,15,.3) 100%),linear-gradient(180deg,transparent 60%,var(--bg) 100%)}
+#gridFx{position:absolute;inset:0;background-image:linear-gradient(rgba(94,150,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(94,150,255,.055) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse at 30% 40%,black 25%,transparent 72%)}
+header .wrap{position:relative;z-index:2;padding-top:88px;padding-bottom:56px}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
 @media(max-width:980px){.hero-grid{grid-template-columns:1fr}}
-.badge{display:inline-flex;align-items:center;gap:9px;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.4);color:var(--green);padding:6px 16px;border-radius:99px;font-size:.76rem;font-weight:600;margin-bottom:20px}
+.badge{display:inline-flex;align-items:center;gap:10px;background:rgba(52,211,153,.09);border:1px solid rgba(52,211,153,.42);color:var(--green);padding:7px 18px;border-radius:99px;font-size:.76rem;font-weight:600;margin-bottom:22px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.5s infinite}
-@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(52,211,153,.5)}50%{opacity:.6;box-shadow:0 0 0 5px rgba(52,211,153,0)}}
-h1{font-size:clamp(2.3rem,6vw,3.8rem);line-height:1.08;letter-spacing:-.03em;font-weight:800}
-.grad{background:linear-gradient(110deg,var(--cyan) 0%,#67e8f9 25%,var(--violet) 60%,var(--green) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.role-line{margin:18px 0 4px;font-size:1.05rem;color:#cdd6f4}
-.role-line .mono{color:var(--cyan)}
-.tagline{color:var(--muted);max-width:560px;font-size:.93rem;margin-top:10px}
-.typing{font-family:'IBM Plex Mono';color:var(--green);font-size:.95rem;margin-top:14px;min-height:1.5em}
+@keyframes pulse{50%{opacity:.45;box-shadow:0 0 0 6px rgba(52,211,153,0)}}
+h1{font-size:clamp(2.3rem,6.4vw,3.9rem);line-height:1.07;letter-spacing:-.03em;font-weight:800}
+.grad{background:linear-gradient(110deg,var(--cyan) 0%,#7dd3fc 25%,var(--violet) 60%,var(--green) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.role-line{margin:18px 0 6px;font-size:1.02rem;color:#cdd6f4}
+.role-line b{color:var(--cyan)}
+.tagline{color:var(--muted);max-width:560px;font-size:.92rem}
+.typing{font-family:'IBM Plex Mono';color:var(--green);font-size:.9rem;margin-top:16px;min-height:1.4em}
 .cursor{display:inline-block;width:9px;background:var(--green);animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.cta-row{display:flex;gap:14px;margin:28px 0;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--cyan),#0ea5e9);color:#031a21;font-weight:800;padding:13px 26px;border-radius:10px;font-size:.9rem;transition:transform .2s,box-shadow .2s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 34px rgba(34,211,238,.4)}
-.btn-ghost{background:rgba(255,255,255,.04);color:#eaf2ff;border:1px solid var(--line2)}
-.btn-ghost:hover{border-color:var(--cyan);box-shadow:0 0 22px rgba(34,211,238,.2)}
-.mini-stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:6px}
-.ms b{display:block;font-size:1.45rem;color:#fff}
-.ms span{color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em}
+.cta-row{display:flex;gap:12px;margin:28px 0 30px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--cyan),#0ea5e9);color:#031a21;font-weight:800;padding:13px 24px;border-radius:10px;font-size:.9rem;transition:.2s;box-shadow:0 6px 26px rgba(34,211,238,.35)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(34,211,238,.45)}
+.btn-ghost{background:rgba(255,255,255,.04);color:#eaf2ff;border:1px solid var(--line2);box-shadow:none}
+.btn-ghost:hover{border-color:var(--cyan);transform:translateY(-2px)}
+.quick-facts{display:flex;gap:24px;flex-wrap:wrap}
+.qf{border-left:1px solid var(--line2);padding-left:14px}
+.qf b{display:block;font-size:1.3rem;color:#fff;font-weight:700}
+.qf span{color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em}
 
-/* PHOTO CARD */
 .hero-card{position:relative;justify-self:center}
-.ring{width:280px;height:280px;border-radius:50%;padding:6px;background:conic-gradient(var(--cyan),var(--violet),var(--green),var(--cyan));animation:spin 10s linear infinite}
+.ring{width:272px;height:272px;border-radius:50%;padding:6px;background:conic-gradient(var(--cyan),var(--violet),var(--green),var(--cyan));animation:spin 14s linear infinite;box-shadow:0 0 60px rgba(34,211,238,.25)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .ring-inner{width:100%;height:100%;border-radius:50%;background:var(--bg2);padding:6px}
 .ring img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
-.hud{position:absolute;background:rgba(8,13,31,.88);backdrop-filter:blur(8px);border:1px solid var(--line2);border-radius:12px;padding:9px 13px;font-size:.72rem;font-family:'IBM Plex Mono';box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.hud small{color:var(--muted);display:block;font-size:.62rem;letter-spacing:.06em}
+.hud{position:absolute;background:rgba(7,12,28,.85);backdrop-filter:blur(10px);border:1px solid var(--line2);border-radius:12px;padding:10px 14px;font-size:.7rem;font-family:'IBM Plex Mono';box-shadow:0 10px 34px rgba(0,0,0,.45)}
+.hud small{color:var(--muted);display:block;font-size:.6rem;letter-spacing:.1em}
 .hud b{color:var(--cyan)}
-.hud-1{top:6%;left:-4%}
-.hud-2{top:44%;right:-6%}
-.hud-3{bottom:8%;left:-2%}
-@media(max-width:980px){.hud-1{left:2%}.hud-2{right:2%}.hud-3{left:8%}}
-@media(max-width:520px){.ring{width:210px;height:210px}.hud{display:none}}
+.hud-1{top:4%;left:-8%}.hud-2{top:46%;right:-8%}.hud-3{bottom:6%;left:-4%}
+@media(max-width:980px){.hud-1,.hud-3{left:1%}.hud-2{right:1%}}
+@media(max-width:560px){.ring{width:205px;height:205px}.hud{display:none}}
 
-/* SECTION */
-section{padding:88px 0;position:relative}
-.sec-label{font-family:'IBM Plex Mono';color:var(--cyan);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px}
-.sec-label::before{content:"";width:26px;height:1px;background:var(--cyan)}
-h2{font-size:clamp(1.6rem,4vw,2.3rem);letter-spacing:-.02em;margin-bottom:12px}
-.lead{color:var(--muted);max-width:640px;font-size:.92rem}
+/* ========= SECTIONS ========= */
+section{padding:80px 0;position:relative}
+.sec-head{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+.sec-idx{font-family:'IBM Plex Mono';font-size:.75rem;color:var(--cyan);border:1px solid rgba(34,211,238,.35);border-radius:8px;padding:6px 10px}
+.sec-label{font-family:'IBM Plex Mono';color:var(--muted);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase}
+h2{font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;margin-bottom:8px}
+.lead{color:var(--muted);max-width:660px;font-size:.92rem;margin-bottom:26px}
 
-/* ABOUT / CARDS */
-.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;margin-top:38px}
+/* ========= ABOUT ========= */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:26px}
 @media(max-width:980px){.about-grid{grid-template-columns:1fr}}
 .card{background:linear-gradient(165deg,var(--card) 0%,var(--bg2) 100%);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s,border-color .3s}
-.card:hover{transform:translateY(-5px);border-color:var(--line2)}
-.card h3{font-size:.98rem;display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.card:hover{transform:translateY(-4px);border-color:var(--line2)}
+.card h3{font-size:.95rem;display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .chips{display:flex;flex-wrap:wrap;gap:7px}
 .chip{background:var(--card2);color:#c3cdf5;border:1px solid var(--line);padding:5px 11px;border-radius:7px;font-size:.72rem;font-family:'IBM Plex Mono'}
-
-/* TERMINAL */
-.terminal{background:#040810;border:1px solid var(--line2);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.term-bar{display:flex;gap:7px;padding:12px 16px;background:#070d1d;border-bottom:1px solid var(--line)}
+.terminal{background:#040810;border:1px solid var(--line2);border-radius:14px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.term-bar{display:flex;gap:7px;padding:11px 14px;background:#080e1f;border-bottom:1px solid var(--line)}
 .tdot{width:11px;height:11px;border-radius:50%}
-.term-body{padding:18px 18px 22px;font-family:'IBM Plex Mono';font-size:.8rem;line-height:1.9;min-height:230px}
-.term-body .g{color:var(--green)}.term-body .c{color:var(--cyan)}.term-body .m{color:var(--muted)}.term-body .y{color:var(--amber)}
+.term-title{margin-left:10px;color:#8b97bb;font-size:.72rem;font-family:'IBM Plex Mono'}
+.term-body{padding:17px;font-family:'IBM Plex Mono';font-size:.78rem;line-height:1.85;min-height:230px}
+.term-body .g{color:var(--green)}.term-body .c{color:var(--cyan)}.term-body .m{color:var(--muted)}.term-body .y{color:var(--amber)}.term-body .v{color:var(--violet)}
 
-/* PROJECTS */
-.filters{display:flex;gap:10px;margin:26px 0 30px;flex-wrap:wrap}
-.fbtn{background:var(--card2);color:#cdd7fb;border:1px solid var(--line);border-radius:99px;padding:8px 20px;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .25s}
+/* ========= TIMELINE ========= */
+.tl{border-left:2px solid var(--card2);padding-left:30px;margin-top:34px}
+.tl-item{position:relative;margin-bottom:24px;background:linear-gradient(120deg,transparent 0%,transparent 100%)}
+.tl-item::before{content:"";position:absolute;left:-39px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--green);box-shadow:0 0 12px rgba(52,211,153,.7)}
+.tl-item:nth-child(3n+2)::before{background:var(--violet);box-shadow:0 0 12px rgba(129,140,248,.7)}
+.tl-item:nth-child(3n+3)::before{background:var(--amber);box-shadow:0 0 12px rgba(251,191,36,.7)}
+.tl-row{display:flex;gap:20px;align-items:baseline;flex-wrap:wrap}
+.tl-date{font-family:'IBM Plex Mono';font-size:.7rem;color:var(--green);letter-spacing:.06em;min-width:120px}
+.tl-item h3{font-size:.97rem}
+.tl-badges{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.pill{font-family:'IBM Plex Mono';font-size:.62rem;letter-spacing:.08em;color:#031a21;background:var(--green);border-radius:6px;padding:3px 9px;font-weight:600}
+.pill.v{background:var(--violet);color:#0d0620}
+.pill.a{background:var(--amber)}
+.pill.c{background:var(--cyan)}
+.tl-org{font-size:.75rem;color:#cdd6f4;margin-top:2px}
+.tl-item p{color:var(--muted);font-size:.81rem;margin-top:7px;max-width:800px}
+
+/* ========= PROJECTS ========= */
+.filters{display:flex;gap:10px;margin:0 0 26px;flex-wrap:wrap}
+.fbtn{background:var(--card2);color:#cdd7fb;border:1px solid var(--line);border-radius:99px;padding:8px 18px;font-size:.79rem;font-weight:600;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:8px}
+.fbtn b{color:var(--muted);font-family:'IBM Plex Mono';font-size:.7rem}
 .fbtn:hover{border-color:var(--cyan)}
-.fbtn.active{background:var(--cyan);color:#031a21;border-color:var(--cyan);box-shadow:0 0 22px rgba(34,211,238,.4)}
+.fbtn.active{background:var(--cyan);color:#031a21;border-color:var(--cyan)}
+.fbtn.active b{color:#031a21}
+.count{font-family:'IBM Plex Mono';font-size:.72rem;color:var(--muted)}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media(max-width:1024px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:680px){.proj-grid{grid-template-columns:1fr}}
 .proj{padding:0;overflow:hidden;display:flex;flex-direction:column}
-.proj-img{height:158px;overflow:hidden;position:relative;background:#0a0f22}
-.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.proj:hover .proj-img img{transform:scale(1.08)}
-.proj-img .tag{position:absolute;top:12px;right:12px}
-.pill{font-family:'IBM Plex Mono';font-size:.64rem;letter-spacing:.08em;color:#031a21;background:var(--green);border-radius:6px;padding:4px 10px;font-weight:600}
-.pill.pfa{background:var(--amber)}
-.pill.hack{background:var(--violet);color:#0d0620}
-.proj-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
-.proj-body h3{font-size:1.02rem;margin-bottom:8px}
-.proj-body p{color:var(--muted);font-size:.8rem;margin-bottom:12px}
-.proj-body ul{list-style:none;margin:0 0 12px}
-.proj-body li{font-size:.76rem;color:#c3cdf5;padding-left:16px;position:relative;margin:4px 0}
+.proj-img{height:150px;position:relative;overflow:hidden;background:#0a0f22}
+.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:saturate(.9)}
+.proj:hover .proj-img img{transform:scale(1.07)}
+.proj-flag{position:absolute;top:12px;right:12px;font-family:'IBM Plex Mono';font-size:.62rem;background:var(--green);color:#031a21;border-radius:6px;padding:4px 8px;letter-spacing:.06em;font-weight:600}
+.proj-flag.a{background:var(--amber)}.proj-flag.v{background:var(--violet);color:#0d0620}.proj-flag.c{background:var(--cyan)}
+.proj-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.proj-body h3{font-size:1rem;margin-bottom:8px}
+.proj-body > p{color:var(--muted);font-size:.8rem;margin-bottom:12px}
+.proj-body li{font-size:.75rem;color:#c3cdf5;list-style:none;padding-left:16px;position:relative;margin:4px 0}
 .proj-body li::before{content:"▸";position:absolute;left:0;color:var(--cyan)}
-.tag{font-family:'IBM Plex Mono';font-size:.63rem;color:var(--cyan);border:1px solid rgba(34,211,238,.4);border-radius:5px;padding:3px 7px;display:inline-block;margin:2px 2px 0 0}
-.proj-photos{display:flex;gap:8px;margin-top:auto}
-.proj-photos img{width:52px;height:40px;object-fit:cover;border-radius:8px;border:1px solid var(--line2);cursor:zoom-in;transition:transform .2s}
-.proj-photos img:hover{transform:scale(1.15)}
+.proj-foot{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:12px}
+.tag{font-family:'IBM Plex Mono';font-size:.62rem;color:var(--cyan);border:1px solid rgba(34,211,238,.4);border-radius:5px;padding:3px 7px}
+.proj-shots{display:flex;gap:7px;margin-top:12px}
+.proj-shots img{width:54px;height:42px;object-fit:cover;border-radius:8px;border:1px solid var(--line2);cursor:zoom-in}
+.proj-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:.78rem;font-weight:600}
 .hidden{display:none!important}
 
-/* COMPETITIONS */
-.comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
-@media(max-width:1024px){.comp-grid{grid-template-columns:1fr}}
-.comp{display:flex;gap:16px;align-items:flex-start}
-.comp-num{font-family:'IBM Plex Mono';font-size:.72rem;color:var(--amber);border:1px solid rgba(251,191,36,.4);border-radius:8px;padding:7px 10px;white-space:nowrap}
-.comp h3{font-size:.92rem;margin-bottom:6px}
-.comp p{color:var(--muted);font-size:.79rem}
-.comp .org{color:#cdd6f4;font-size:.71rem;margin-top:8px;font-family:'IBM Plex Mono'}
+/* ========= LEADERSHIP / COMPETITIONS (grid cards) ========= */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:1024px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.grid-3{grid-template-columns:1fr}}
+.mini-card{display:flex;gap:14px;align-items:flex-start}
+.mini-num{font-family:'IBM Plex Mono';font-size:.7rem;color:var(--amber);border:1px solid rgba(251,191,36,.4);border-radius:9px;padding:7px 9px;white-space:nowrap;min-width:48px;text-align:center}
+.mini-card h3{font-size:.9rem;margin-bottom:6px}
+.mini-card p{color:var(--muted);font-size:.78rem}
+.mini-org{color:#cdd6f4;font-size:.69rem;margin-top:8px;font-family:'IBM Plex Mono'}
+.verified{display:inline-flex;align-items:center;gap:5px;font-size:.64rem;color:var(--green);margin-top:8px;font-family:'IBM Plex Mono'}
 
-/* TIMELINE */
-.tl{margin-top:40px;border-left:2px solid var(--card2);padding-left:30px}
-.tl-item{position:relative;margin-bottom:22px}
-.tl-item::before{content:"";position:absolute;left:-38px;top:5px;width:13px;height:13px;border-radius:50%;background:var(--green);box-shadow:0 0 12px rgba(52,211,153,.6)}
-.tl-item:nth-child(odd)::before{background:var(--violet);box-shadow:0 0 12px rgba(129,140,248,.6)}
-.tl-date{font-family:'IBM Plex Mono';font-size:.7rem;color:var(--green);letter-spacing:.06em}
-.tl-item h3{font-size:.95rem;margin:4px 0 2px}
-.tl-org{font-size:.74rem;color:#cdd6f4}
-.tl-item p{color:var(--muted);font-size:.81rem;margin-top:5px}
-.tl-badge{display:inline-block;font-size:.64rem;color:var(--amber);border:1px solid rgba(251,191,36,.35);padding:2px 8px;border-radius:5px;margin-right:6px;font-family:'IBM Plex Mono'}
+/* ========= SKILLS ========= */
+.skills-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:26px}
+@media(max-width:980px){.skills-grid{grid-template-columns:1fr}}
+.bars .row{margin-bottom:16px}
+.bars b{font-size:.81rem;display:flex;justify-content:space-between;color:#eaf0ff}
+.bars b span{color:var(--muted);font-family:'IBM Plex Mono';font-size:.73rem;font-weight:400}
+.bar-track{height:7px;background:var(--card2);border-radius:5px;overflow:hidden;margin-top:7px}
+.bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--violet));border-radius:5px;transition:width 1.3s cubic-bezier(.22,1,.36,1)}
+.skill-cats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(max-width:680px){.skill-cats{grid-template-columns:1fr}}
+.skill-cat{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px}
+.skill-cat h4{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;font-family:'IBM Plex Mono'}
+.skill-cat .chips{gap:5px}
+.skill-cat .chip{font-size:.67rem;padding:4px 8px}
 
-/* SKILLS BARS */
-.bars{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 40px;margin-top:36px}
-@media(max-width:880px){.bars{grid-template-columns:1fr}}
-.bar-row b{font-size:.82rem;color:#eaf0ff;display:flex;justify-content:space-between}
-.bar-track{height:7px;background:var(--card2);border-radius:5px;margin:8px 0 0;overflow:hidden}
-.bar-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--cyan),var(--violet));width:0;transition:width 1.4s cubic-bezier(.22,1,.36,1)}
-
-/* MARQUEE */
-.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;background:rgba(10,15,34,.5)}
-.marquee-inner{display:flex;gap:48px;width:max-content;animation:mq 26s linear infinite;white-space:nowrap;font-family:'IBM Plex Mono';font-size:.85rem;color:var(--muted)}
+/* ========= MARQUEE ========= */
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;background:rgba(10,15,34,.6)}
+.marquee-inner{display:flex;gap:46px;width:max-content;animation:mq 28s linear infinite;white-space:nowrap;font-family:'IBM Plex Mono';font-size:.82rem;color:var(--muted)}
 .marquee-inner b{color:var(--cyan)}
 @keyframes mq{to{transform:translateX(-50%)}}
 
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;margin-top:38px}
+/* ========= CONTACT ========= */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px}
 @media(max-width:980px){.contact-grid{grid-template-columns:1fr}}
 .c-row{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px;margin-bottom:11px;transition:border-color .25s}
 .c-row:hover{border-color:var(--cyan)}
-.c-row small{color:var(--muted);display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em}
+.c-row small{color:var(--muted);display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.1em}
 form{display:flex;flex-direction:column;gap:13px}
 input,textarea,select{background:var(--bg2);border:1px solid var(--line);color:var(--text);padding:13px;border-radius:10px;font-family:inherit;font-size:.92rem}
-input:focus,textarea:focus,select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(34,211,238,.12)}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--cyan)}
 
-/* LIGHTBOX */
+footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--muted);font-size:.78rem}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(28px);transition:all .8s ease}
+.reveal.visible{opacity:1;transform:none}
 #lightbox{position:fixed;inset:0;z-index:200;background:rgba(2,5,12,.92);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
 #lightbox.open{opacity:1;pointer-events:auto}
-#lightbox img{max-width:88vw;max-height:84vh;border-radius:12px;border:1px solid var(--line2)}
-#lightbox button{position:absolute;top:20px;right:26px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
-
-footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--muted);font-size:.79rem}
-.reveal{opacity:0;transform:translateY(30px);transition:all .8s ease}
-.reveal.visible{opacity:1;transform:none}
-@media(max-width:1024px){.proj-grid{grid-template-columns:repeat(2,1fr)}.comp-grid{grid-template-columns:1fr}.hero-grid{gap:36px}}
-@media(max-width:760px){
-  nav ul{display:none}
-  .logo{font-size:.9rem}
-  header .wrap{padding-top:88px}
-  .hero-grid{grid-template-columns:1fr;gap:40px}
-  .ring{width:200px;height:200px}
-  .hud{display:none}
-  h1{font-size:clamp(1.9rem,9vw,2.6rem)}
-  .cta-row .btn{flex:1 1 100%;justify-content:center}
-  .mini-stats{gap:18px}
-  .ms b{font-size:1.2rem}
-  .sec-label{font-size:.64rem}
-  section{padding:64px 0}
-  .proj-photos{flex-wrap:wrap}
-  .bars{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
-  .terminal{font-size:.85em}
-  .term-body{min-height:180px;font-size:.68rem}
-  .wrap{padding:0 18px}
-}
-@media(max-width:480px){
-  h1{font-size:1.85rem}
-  .hero-card{transform:scale(.92);transform-origin:center top}
-  .tagline{font-size:.86rem}
-  .card{padding:20px}
-  .proj-img{height:140px}
-  .ms{width:45%}
-  .cta-row{gap:10px}
-}
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-  html{scroll-behavior:auto}
-}
-@media print { nav,#glow,.marquee,.filters{display:none!important} body{background:#fff;color:#000} }
+#lightbox img{max-width:90vw;max-height:85vh;border-radius:12px;border:1px solid var(--line2)}
+#lightbox button{position:absolute;top:18px;right:26px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
+@media(max-width:760px){nav ul{display:none}.tl-row{gap:8px}.tl-date{min-width:0}}
+@media(max-width:420px){.wrap{padding:0 16px}section{padding:56px 0}.h1,h1{font-size:1.7rem}}
 </style>
 </head>
 <body>
 <div id="glow"></div>
+<div id="progress"></div>
 
-<nav>
-  <div class="wrap">
-    <div class="logo">HASSAN<b>.AIT ALLOU</b></div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#competitions">Competitions</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a class="gh-btn" href="https://github.com/hassanaitallou" target="_blank" rel="noopener">⌥ GitHub</a>
-  </div>
-</nav>
+<nav><div class="wrap">
+  <div class="logo"><div class="logo-mark">HA</div>HASSAN <b>AIT ALLOU</b></div>
+  <ul>
+    <li><a href="#stages">Stages</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#competitions">Compétitions</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="gh-btn" href="https://github.com/hassanaitallou" target="_blank" rel="noopener">⌥ GitHub</a>
+</div></nav>
 
-<header id="home">
-  <div id="bannerBg"></div>
-  <div id="gridFx"></div>
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="badge"><span class="dot"></span> Available for freelance &amp; remote roles</div>
-        <h1>Embedded Systems<br><span class="grad">&amp; IoT Engineer</span></h1>
-        <div class="role-line"><span class="mono">Hassan AIT ALLOU</span> — SEIT Engineer · FST Errachidia · Morocco</div>
-        <div class="typing"><span id="typed"></span><span class="cursor">&nbsp;</span></div>
-        <p class="tagline">I <b>design</b>, <b>build</b> and <b>ship</b> connected machines: from ESP32 sensors and C++/Python firmware to MQTT pipelines, MATLAB/Simulink fault models and AI-driven predictive-maintenance dashboards. Ex-Capgemini Engineering. Presented at COCIA 2026 &amp; Rally IA Future Lab.</p>
-        <div class="cta-row">
-          <a class="btn" href="#projects">⚡ See my projects</a>
-          <a class="btn btn-ghost" href="#contact">📧 Hire me</a>
-        </div>
-        <div class="mini-stats">
-          <div class="ms"><b data-count="6">0</b><span>Internships &amp; roles</span></div>
-          <div class="ms"><b data-count="5">0</b><span>Shipped projects</span></div>
-          <div class="ms"><b data-count="1561">0</b><span>LinkedIn followers</span></div>
-          <div class="ms"><b data-count="500">0</b><span>Connections</span></div>
-        </div>
+<!-- ========= HERO ========= -->
+<header id="top">
+  <div id="bannerBg"></div><div id="gridFx"></div>
+  <div class="wrap"><div class="hero-grid">
+    <div>
+      <div class="badge"><span class="dot"></span> Ouvert aux missions freelance & télétravail</div>
+      <h1>Ingénieur <span class="grad">Systèmes Embarqués<br>&amp; IoT</span></h1>
+      <div class="role-line"><b>Hassan AIT ALLOU</b> · Ingénieur SEIT (FST Errachidia) · Stage PFA — <b>Capgemini Engineering</b></div>
+      <div class="typing"><span id="typed"></span><span class="cursor">&nbsp;</span></div>
+      <p class="tagline">Je conçois des systèmes connectés — du capteur ESP32 à la détection de défauts par IA. Présenté à <b>COCIA 2026</b> et <b>Rally IA Future Lab</b>. Président adjoint du club sciences appliquées, Deputy Campus Director Hult Prize.</p>
+      <div class="cta-row">
+        <a class="btn" href="#projets">Voir mes projets →</a>
+        <a class="btn btn-ghost" href="#contact">Me contacter</a>
       </div>
-      <div class="hero-card">
-        <div class="ring"><div class="ring-inner"><img src="assets/profile.jpg" alt="Hassan AIT ALLOU — Embedded Systems & IoT Engineer"></div></div>
-        <div class="hud hud-1"><small>CURRENTLY</small><b>PFA — Capgemini Eng.</b></div>
-        <div class="hud hud-2"><small>ROLES</small><b>VP InTech Club · Hult Prize Deputy</b></div>
-        <div class="hud hud-3"><small>BASE</small><b>Errachidia · UTC+1</b></div>
+      <div class="quick-facts">
+        <div class="qf"><b data-count="1561">0</b><span>Followers LinkedIn</span></div>
+        <div class="qf"><b data-count="6">0</b><span>Stages & postes</span></div>
+        <div class="qf"><b data-count="5">0</b><span>Projets livrés</span></div>
+        <div class="qf"><b data-count="3">0</b><span>Compétitions / lab</span></div>
       </div>
     </div>
-  </div>
+    <div class="hero-card">
+      <div class="ring"><div class="ring-inner"><img src="assets/profile.jpg" alt="Hassan AIT ALLOU"></div></div>
+      <div class="hud hud-1"><small>PFA 2026</small><b>Capgemini Engineering</b></div>
+      <div class="hud hud-2"><small>LEADERSHIP</small><b>VP — InTech Club FSTE</b></div>
+      <div class="hud hud-3"><small>HULT PRIZE</small><b>Deputy Campus Director</b></div>
+    </div>
+  </div></div>
 </header>
 
-<div class="marquee"><div class="marquee-inner" id="marquee">
-  <span><b>ESP32</b> · <b>C/C++</b> · <b>Python</b> · <b>MATLAB / Simulink</b> · <b>MQTT</b> · <b>IoT</b> · <b>VHDL / FPGA</b> · <b>PCB Design</b> · <b>Predictive Maintenance</b> · <b>Edge AI</b> · <b>Embedded Linux</b> · <b>Telecom</b> · <b>LabVIEW</b> · <b>COMSOL</b> · </span>
-  <span><b>ESP32</b> · <b>C/C++</b> · <b>Python</b> · <b>MATLAB / Simulink</b> · <b>MQTT</b> · <b>IoT</b> · <b>VHDL / FPGA</b> · <b>PCB Design</b> · <b>Predictive Maintenance</b> · <b>Edge AI</b> · <b>Embedded Linux</b> · <b>Telecom</b> · <b>LabVIEW</b> · <b>COMSOL</b> · </span>
-</div></div>
+<div class="marquee"><div class="marquee-inner"><span><b>ESP32</b> · <b>C/C++</b> · <b>Python</b> · <b>MQTT</b> · <b>MATLAB/Simulink</b> · <b>VHDL/FPGA</b> · <b>PCB</b> · <b>Predictive Maintenance</b> · <b>COMSOL</b> · <b>Telecoms</b> · <b>LabVIEW</b> · <b>Edge AI</b> · </span><span><b>ESP32</b> · <b>C/C++</b> · <b>Python</b> · <b>MQTT</b> · <b>MATLAB/Simulink</b> · <b>VHDL/FPGA</b> · <b>PCB</b> · <b>Predictive Maintenance</b> · <b>COMSOL</b> · <b>Telecoms</b> · <b>LabVIEW</b> · <b>Edge AI</b> · </span></div></div>
 
-<section id="about">
-  <div class="wrap">
-    <div class="sec-label">01 // About</div>
-    <h2>The engineer <span class="grad">behind the soldering iron</span></h2>
-    <p class="lead">Engineering student (State Diploma, SEIT — Smart Embedded Systems &amp; Telecom) at FST Errachidia, Morocco. Final-year internship at <b>Capgemini Engineering</b> on AI-driven predictive maintenance of electric motors.</p>
-    <div class="about-grid">
-      <div class="terminal reveal">
-        <div class="term-bar"><span class="tdot" style="background:#ff5f57"></span><span class="tdot" style="background:#febc2e"></span><span class="tdot" style="background:#28c840"></span><span class="mono" style="margin-left:10px;color:#8b97bb;font-size:.75rem">hassan@embedded: ~</span></div>
-        <div class="term-body" id="termBody"></div>
-      </div>
-      <div class="card reveal">
-        <h3>🛰️ What I do</h3>
-        <p style="color:var(--muted);font-size:.85rem;margin-bottom:14px">End-to-end embedded &amp; IoT systems — sensors → firmware → cloud → dashboard, with a strong bias for industrial maintenance and motor fault diagnosis.</p>
-        <div class="chips"><span class="chip">ESP32 / Arduino</span><span class="chip">Embedded C/C++</span><span class="chip">Python (Dash, Pandas, OpenCV)</span><span class="chip">MATLAB / Simulink</span><span class="chip">MQTT</span><span class="chip">VHDL / FPGA</span><span class="chip">PCB EasyEDA</span><span class="chip">LabVIEW</span><span class="chip">COMSOL</span><span class="chip">Telecom</span><span class="chip">Wi-Fi provisioning</span><span class="chip">IEEE PHM datasets</span></div>
-        <h3 style="margin-top:18px">🏆 Recognition</h3>
-        <p style="color:var(--muted);font-size:.85rem">Presented the <b>IoT surveillance robot</b> at <b>COCIA 2026</b> (EST Casablanca) and <b>Rally IA Future Lab</b> (Merzouga — Ministry of Digital Transition × UM6P). Vice-President of <b>InTech Club</b> and <b>Deputy Campus Director of Hult Prize</b>.</p>
-      </div>
+<!-- ========= 01 // À PROPOS ========= -->
+<section id="about"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">01</span><span class="sec-label">À propos</span></div>
+  <h2>L'ingénieur derrière <span class="grad">le fer à souder</span></h2>
+  <p class="lead">Étudiant ingénieur (Diplôme d'État, SEIT) à FST Errachidia, déplacement dans toute la chaîne embarquée : du capteur à la fusion IA, avec une appétence pour les moteurs électriques et la télé maintenance.</p>
+  <div class="about-grid">
+    <div class="terminal reveal"><div class="term-bar"><span class="tdot" style="background:#ff5f57"></span><span class="tdot" style="background:#febc2e"></span><span class="tdot" style="background:#28c840"></span><span class="term-title">hassan@embedded — zsh</span></div><div class="term-body" id="termBody"></div></div>
+    <div class="card reveal">
+      <h3>📍 Neutralité, terrain et impact</h3>
+      <p style="color:var(--muted);font-size:.86rem;margin-bottom:14px">Technophile de terrain : j'aime autant mettre les mains dans le circuit que raisonner sur la période d'échantillonnage. Mon fil rouge : le résultat mesurable, pas les slides.</p>
+      <div class="chips"><span class="chip">Systèmes embarqués</span><span class="chip">IoT</span><span class="chip">Électronique</span><span class="chip">Robotique</span><span class="chip">Télécoms</span><span class="chip">Maintenance prédictive</span><span class="chip">IA</span></div>
+      <h3 style="margin-top:20px">🗂️ Parcours express</h3>
+      <p style="color:var(--muted);font-size:.83rem">PFA Capgemini Engineering · Stage d'initiation Halib Rich · OB Électronique · T2S Échographe/IRM · Global Mines moteurs asynchrones · Lycée STE → DUT EII (EST Casablanca)</p>
     </div>
   </div>
-</section>
+</div></section>
 
-<section id="projects" style="background:var(--bg2)">
-  <div class="wrap">
-    <div class="sec-label">02 // Projects</div>
-    <h2>Built &amp; shipped</h2>
-    <p class="lead">From solar-powered robots to AI predictive maintenance. Filter by domain:</p>
-    <div class="filters" id="filters">
-      <button class="fbtn active" data-filter="all">All</button>
-      <button class="fbtn" data-filter="pfa">PFA / Industry</button>
-      <button class="fbtn" data-filter="robotics">Robotics</button>
-      <button class="fbtn" data-filter="vision">Computer Vision</button>
+<!-- ========= 02 // STAGES ========= -->
+<section id="stages" style="background:var(--bg2)"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">02</span><span class="sec-label">Stages &amp; Expériences</span></div>
+  <h2>Là où j'ai mis <span class="grad">les mains dans le moteur</span></h2>
+  <p class="lead">De la réparation de cartes à la maintenance prédictive avec IA — une progression volontaire vers l'embarqué industriel.</p>
+  <div class="tl">
+
+    <div class="tl-item reveal"><div class="tl-row"><div class="tl-date">JUIL. — SEPT. 2026</div><h3>PFA — Maintenance prédictive des moteurs</h3></div><div class="tl-org"><span class="tl-badges"><span class="pill">PFA</span><span class="pill c">INDUSTRIEL</span></span>Capgemini Engineering — Casablanca</div><p>Conception d'une solution de maintenance prédictive : identification des modes de défaillance des moteurs, déploiement capteurs vibration, pipeline IoT → MQTT → IA, traitement Python + MATLAB/Simulink, dashboard de supervision en temps réel. (Travail confidentiel — description uniquement)</p></div>
+
+    <div class="tl-item reveal"><div class="tl-row"><div class="tl-date">JUIL. — AOÛT 2025</div><h3>Stage d'initiation — Intégrateur capteurs vibration</h3></div><div class="tl-org"><span class="tl-badges"><span class="pill c">IOT</span><span class="pill">INDUSTRIEL</span></span>Coopérative Halib Rich — Rich</div><p>Intégration de capteurs de vibration pour la surveillance des moteurs ; développement d'un système de surveillance de température.</p></div>
+
+    <div class="tl-item reveal"><div class="tl-row"><div class="tl-date">JANV. — JUIN 2024</div><h3>Technicien tests &amp; réparation — Électronique</h3></div><div class="tl-org"><span class="tl-badges"><span class="pill v">ÉLECTRONIQUE</span></span>OB Électronique — Casablanca</div><p>Lecture de schémas et PCB, tests de cartes électroniques, diagnostic et réparation ; participation à la chaîne production/contrôle qualité.</p></div>
+
+    <div class="tl-item reveal"><div class="tl-row"><div class="tl-date">AVR. — JUIN 2023</div><h3>Stage de fin d'études — Équipements biomédicaux</h3></div><div class="tl-org"><span class="tl-badges"><span class="pill a">BIOMÉDICAL</span></span>T2S — Casablanca</div><p>Analyse d'échographe et IRM ; étude AMDEC des modes de défaillance, diagnostic, rédaction de procédures de maintenance ; base de données pannes.</p></div>
+
+    <div class="tl-item reveal"><div class="tl-row"><div class="tl-date">AOÛT — SEPT. 2022</div><h3>Stage d'initiation — Moteurs asynchrones</h3></div><div class="tl-org"><span class="tl-badges"><span class="pill">MAINTENANCE</span></span>Global Mines — Rich</div><p>Maintenance et suivi des moteurs asynchrones en environnement minier.</p></div>
+  </div>
+</div></section>
+
+<!-- ========= 03 // PROJETS ========= -->
+<section id="projets"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">03</span><span class="sec-label">Projets</span></div>
+  <h2>Académiques &amp; personnels</h2>
+  <p class="lead">Ceux que j'ai vraiment construits, avec résultats mesurables. Filtre par domaine : <span class="count" id="projCount"></span></p>
+  <div class="filters" id="filters">
+    <button class="fbtn active" data-filter="all">Tous <b>5</b></button>
+    <button class="fbtn" data-filter="iot">IoT / Robotique <b>3</b></button>
+    <button class="fbtn" data-filter="ia">IA / Data <b>2</b></button>
+  </div>
+  <div class="proj-grid" id="projGrid">
+
+    <div class="card proj reveal" data-cat="ia">
+      <div class="proj-img"><img src="assets/banner.jpg" alt="Maintenance prédictive"><span class="proj-flag a">PFA</span></div>
+      <div class="proj-body">
+        <h3>Maintenance prédictive moteurs IA</h3>
+        <p>PFA chez Capgemini : failure modes, capteurs en ligne, détection anticipée par IA sur moteurs électriques.</p>
+        <li>Identification des modes de défaillance + paramètres de surveillance</li>
+        <li>Chaîne IoT : capteurs → MQTT → Python/MATLAB → dashboard temps réel</li>
+        <li>Détection anticipée de défauts par modèle supervisé</li>
+        <div class="proj-foot"><span class="tag">Python</span><span class="tag">MQTT</span><span class="tag">MATLAB</span><span class="tag">IA</span><span class="tag">Dashboard</span></div>
+        <div class="proj-shots"><img src="assets/banner.jpg" alt="dashboard"></div>
+      </div>
     </div>
-    <div class="proj-grid" id="projGrid">
 
-      <div class="card proj reveal" data-cat="pfa">
-        <div class="proj-img"><img src="assets/banner.jpg" alt="Predictive maintenance dashboard"><span class="tag pill pfa">PFA · CAPGEMINI</span></div>
-        <div class="proj-body">
-          <h3>⚙️ Predictive Maintenance — Electric Motors</h3>
-          <p>Full-stack AI solution for motor health: real-time monitoring + early fault detection.</p>
-          <ul><li>Python/Dash supervision dashboard + Node.js/Express backend (MQTT + Socket.IO) + React/Vite frontend</li><li>ESP32 firmware streaming vibration &amp; temperature to an MQTT broker</li><li>MATLAB/Simulink induction-motor fault model + IEEE PHM 2012 dataset, AMDEC-style fault analysis</li></ul>
-          <div class="chips"><span class="tag">Python</span><span class="tag">MQTT</span><span class="tag">ESP32</span><span class="tag">Simulink</span><span class="tag">Socket.IO</span><span class="tag">React</span></div>
-        </div>
+    <div class="card proj reveal" data-cat="iot">
+      <div class="proj-img"><img src="assets/robot-cocia-1.jpg" alt="Robot IoT COCIA"><span class="proj-flag v">COMPÉTITION</span></div>
+      <div class="proj-body">
+        <h3>Robot IoT — surveillance &amp; contrôle</h3>
+        <p>Co-construit avec M'barek EL-LOUH. Présenté à COCIA 2026 et au Rally IA Future Lab (Merzouga).</p>
+        <li>ESP32 + caméra Wi-Fi, contrôle à distance via web, navigation autonome + manuelle</li>
+        <li>Détection d'obstacles, alimentation solaire, vidéo temps réel</li>
+        <li>Objectif : intégrer la reconnaissance et le comptage par IA</li>
+        <div class="proj-foot"><span class="tag">ESP32</span><span class="tag">Wi-Fi</span><span class="tag">Solaire</span><span class="tag">IoT</span><span class="tag">Robotique</span></div>
+        <div class="proj-shots"><img src="assets/robot-cocia-1.jpg" alt=""><img src="assets/robot-cocia-2.jpg" alt=""><img src="assets/robot-cocia-3.jpg" alt=""><img src="assets/robot-cocia-4.jpg" alt=""></div>
       </div>
+    </div>
 
-      <div class="card proj reveal" data-cat="robotics">
-        <div class="proj-img"><img src="assets/robot-cocia-1.jpg" alt="IoT surveillance robot at COCIA 2026"><span class="tag pill hack">COCIA 2026</span></div>
-        <div class="proj-body">
-          <h3>🤖 IoT Surveillance Robot — ESP32</h3>
-          <p>Autonomous surveillance robot, solar-powered, exhibited at COCIA 2026 &amp; Rally IA Future Lab.</p>
-          <ul><li>ESP32 + Wi-Fi camera, web remote control, real-time video streaming</li><li>Two drive modes: autonomous + manual; obstacle detection &amp; avoidance</li><li>Solar power system for off-grid operation</li></ul>
-          <div class="chips"><span class="tag">ESP32</span><span class="tag">C++</span><span class="tag">IoT</span><span class="tag">Wi-Fi</span><span class="tag">Robotics</span><span class="tag">Solar</span></div>
-          <div class="proj-photos"><img src="assets/robot-cocia-1.jpg" alt="Robot COCIA"><img src="assets/robot-cocia-2.jpg" alt="Robot demo"><img src="assets/robot-cocia-3.jpg" alt="Robot expo"><img src="assets/robot-cocia-4.jpg" alt="Robot team"></div>
-        </div>
+    <div class="card proj reveal" data-cat="ia">
+      <div class="proj-img"><img src="assets/rally.jpg" alt="Rally IA Future Lab"><span class="proj-flag v">RALLY IA</span></div>
+      <div class="proj-body">
+        <h3>Reconnaissance faciale — pointage</h3>
+        <p>Système de pointage automatique : identification en temps réel des personnes et enregistrement instantané.</p>
+        <li>Module de détection + reconnaissance embarqué sur PC/edge</li>
+        <li>Enregistrement des présences en temps réel</li>
+        <li>Optimisation pour la classe et les environnements à passage contrôlé</li>
+        <div class="proj-foot"><span class="tag">IA</span><span class="tag">OpenCV</span><span class="tag">Python</span><span class="tag">Edge</span></div>
       </div>
+    </div>
 
-      <div class="card proj reveal" data-cat="vision">
-        <div class="proj-img"><img src="assets/rally.jpg" alt="Hassan at Rally IA Future Lab Merzouga"></div>
-        <div class="proj-body">
-          <h3>🧑‍💼 Facial-Recognition Attendance</h3>
-          <p>Smart attendance system identifying people in real time, no manual sign-in.</p>
-          <ul><li>Python/OpenCV real-time detection + identification loop</li><li>Automatic attendance export (CSV) with timestamps</li><li>100% local processing — privacy-friendly, no cloud dependency</li></ul>
-          <div class="chips"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Computer Vision</span><span class="tag">Automation</span></div>
-        </div>
+    <div class="card proj reveal" data-cat="iot">
+      <div class="proj-img"><img src="assets/cocia-video.jpg" alt="COCIA demo"><span class="proj-flag c">ACQUISITION</span></div>
+      <div class="proj-body">
+        <h3>Suivi vibration — moteur Halib Rich</h3>
+        <p>Stage d'initiation : intégration capteurs vibration + système de surveillance température.</p>
+        <li>Capteurs vibration intégrés sur moteurs industriels</li>
+        <li>Système de mesure température temps réel</li>
+        <li>Base pour maintenance prédictive terrain</li>
+        <div class="proj-foot"><span class="tag">Capteurs</span><span class="tag">Arduino</span><span class="tag">IoT</span><span class="tag">Terrain</span></div>
       </div>
+    </div>
 
-      <div class="card proj reveal" data-cat="pfa">
-        <div class="proj-img"><img src="assets/cocia-video.jpg" alt="Rally IA Future Lab"><span class="tag pill hack">HACKATHON</span></div>
-        <div class="proj-body">
-          <h3>🏕️ Rally IA Future Lab — Merzouga</h3>
-          <p>First edition of the national AI lab organized by the Ministry of Digital Transition &amp; UM6P.</p>
-          <ul><li>Co-built an AI &amp; IoT innovation project across 4 days with my team (Hamouchi, EL-LOUH, Bouya, Ben Sekou)</li><li>1,000+ young Moroccan talents, organized under the High Royal Directives</li><li>Reinforced real-world constraints, rapid prototyping &amp; team leadership</li></ul>
-          <div class="chips"><span class="tag">AI</span><span class="tag">IoT</span><span class="tag">Innovation</span><span class="tag">Teamwork</span><span class="tag">MarocDigital2030</span></div>
-        </div>
+    <div class="card proj reveal" data-cat="iot">
+      <div class="proj-img"><img src="assets/cisco-post.jpg" alt="Cisco IoT"><span class="proj-flag">CERTIFICATION</span></div>
+      <div class="proj-body">
+        <h3>Cisco IoT — Capteurs intelligents</h3>
+        <p>Certification « Introduction à l'Internet of Things » (Cisco Networking Academy).</p>
+        <li>Fonds IoT + réseaux de communication objets connectés</li>
+        <li>Projets capteurs intelligents réalisés en parallèle du module SEIT</li>
+        <li>Sensibilisation industrie + villes intelligentes</li>
+        <div class="proj-foot"><span class="tag">Cisco</span><span class="tag">IoT</span><span class="tag">Réseaux</span><span class="tag">Capteurs</span></div>
       </div>
+    </div>
 
-      <div class="card proj reveal" data-cat="robotics">
-        <div class="proj-img"><img src="assets/cisco-post.jpg" alt="Cisco Networking Academy IoT"><span class="tag pill">CERTIFIED</span></div>
-        <div class="proj-body">
-          <h3>🎓 Cisco Networking Academy — IoT</h3>
-          <p>“Introduction à l'IoT” certification earned alongside the Smart Sensors &amp; IoT module.</p>
-          <ul><li>IoT fundamentals, smart sensors, IoT networks &amp; connected objects</li><li>Digital transformation at industrial and city scale</li><li>Applying Cisco's IoT design principles in lab projects</li></ul>
-          <div class="chips"><span class="tag">Cisco</span><span class="tag">IoT</span><span class="tag">Networks</span><span class="tag">Sensors</span></div>
-        </div>
-      </div>
+  </div>
+</div></section>
 
-      <div class="card proj reveal" data-cat="vision">
-        <div class="proj-img"><img src="assets/robot-cocia-4.jpg" alt="Biomedical T2S team"></div>
-        <div class="proj-body">
-          <h3>🏥 T2S — Biomedical Diagnostics</h3>
-          <p>End-of-studies internship at T2S Group — ultrasound &amp; MRI failure analysis.</p>
-          <ul><li>AMDEC failure-mode analysis on critical biomedical equipment</li><li>Preventive + corrective maintenance procedures</li><li>Signal quality checks, calibration &amp; technical reporting</li></ul>
-          <div class="chips"><span class="tag">AMDEC</span><span class="tag">Biomedical</span><span class="tag">Reliability</span><span class="tag">Maintenance</span></div>
-        </div>
-      </div>
+<!-- ========= 04 // LEADERSHIP ========= -->
+<section id="leadership" style="background:var(--bg2)"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">04</span><span class="sec-label">Parascolaire &amp; Leadership</span></div>
+  <h2>Entrepreneur, auteur et <span class="grad">vice-président</span></h2>
+  <p class="lead">Clubs, compétitions et responsabilités — mon apprentissage hors les murs de la salle de classe.</p>
+  <div class="grid-3">
+    <div class="card mini-card reveal"><div class="mini-num">VP</div><div><h3>InTech Club — FSTE</h3><p>Vice-président du club technologies intelligentes : organisation de workshops pratiques (capteurs, embarqué), CV &amp; PFA mastery training, événements pour étudiants.</p><div class="mini-org">Oct. 2025 — aujourd'hui · Errachidia</div><span class="verified">✓ 1561 abonnés · publication régulière</span></div></div>
+    <div class="card mini-card reveal"><div class="mini-num">HPT</div><div><h3>Hult Prize — Deputy Campus Director</h3><p>Responsable campus régional : planification d'événements, accompagnement d'équipes étudiantes vers l'innovation sociale pour la région Drâa-Tafilalet.</p><div class="mini-org">Oct. 2025 — aujourd'hui · Hult Prize Foundation</div></div></div>
+    <div class="card mini-card reveal"><div class="mini-num">LAB</div><div><h3>Journées d'étude — Société &amp; territoire</h3><p>Participation aux journées d'étude d'Agoudal/Imilchil sur le développement territorial durable et la recherche appliquée, avec l'association AKHIAM.</p><div class="mini-org">1er-2 mai 2026 · Agoudal / Imilchil</div></div></div>
+    <div class="card mini-card reveal"><div class="mini-num">M24</div><div><h3>M24 — Centre Rich (ALMAP)</h3><p>Événement innovation &amp; robotique au Centre Rich du Développement et de la Jeunesse : ateliers, démonstrations machines, échanges avec la jeunesse.</p><div class="mini-org">Avril 2026 · Centre Rich du Développement et de la Jeunesse</div></div></div>
+  </div>
+</div></section>
 
+<!-- ========= 05 // COMPETITIONS ========= -->
+<section id="competitions"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">05</span><span class="sec-label">Compétitions</span></div>
+  <h2>Sur la scène nationale</h2>
+  <div class="grid-3">
+    <div class="card mini-card reveal"><div class="mini-num">04/26</div><div><h3>COCIA 2026 — Smart Systems &amp; Robotics</h3><p>Compétition nationale (EST Casablanca) : projet Robot IoT surveillance présenté avec M’barek EL-LOUH. Préparé et défendu en équipe avec Prof. Youssef MEJDOUB.</p><div class="mini-org">EST Casablanca · avril 2026 · équipe Hassan + M'barek</div></div></div>
+    <div class="card mini-card reveal"><div class="mini-num">06/26</div><div><h3>Rally IA Future Lab — Merzouga</h3><p>1ère édition du labo IA des Ministères au Sahara : 4 jours d'immersion IA + IoT, projet EdTech présenté en équipe (Omar Hamouchi, M'barek EL-LOUH, Aymane Bouya, Salaheddine Ben Sekou).</p><div class="mini-org">Ministère de l'IA &amp; UM6P · juin 2026 · #RallyIAFuturLab</div></div></div>
+    <div class="card mini-card reveal"><div class="mini-num">CABL</div><div><h3>Automate &amp; atelier M24</h3><p>Présentations publiques et démonstrations machines (assembler, déboguer, présenter) pour faire entrer des centaines de jeunes dans l'informatique complexe.</p><div class="mini-org">M24 ALMAP · Merzouga/Rich · 2026</div></div></div>
+  </div>
+</div></section>
+
+<!-- ========= 06 // COMPETENCES ========= -->
+<section id="skills" style="background:var(--bg2)"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">06</span><span class="sec-label">Compétences</span></div>
+  <h2>Stack technique &amp; humain</h2>
+  <p class="lead">Une trajectoire de la carte électronique au code — et le management d'équipe en club.</p>
+  <div class="skills-grid">
+    <div class="bars reveal">
+      <div class="row"><b>Embarqué &amp; C/C++ (ESP32)<span>9/10</span></b><div class="bar-track"><div class="bar-fill" data-w="90"></div></div></div>
+      <div class="row"><b>Python &amp; MATLAB/Simulink<span>8/10</span></b><div class="bar-track"><div class="bar-fill" data-w="80"></div></div></div>
+      <div class="row"><b>IoT — MQTT, capteurs, Wi-Fi<span>9/10</span></b><div class="bar-track"><div class="bar-fill" data-w="90"></div></div></div>
+      <div class="row"><b>PCB / ISIS / EasyEDA / ARES<span>8/10</span></b><div class="bar-track"><div class="bar-fill" data-w="80"></div></div></div>
+      <div class="row"><b>Simulation COMSOL, Ansoft<span>7/10</span></b><div class="bar-track"><div class="bar-fill" data-w="70"></div></div></div>
+      <div class="row"><b>VHDL &amp; FPGA (ModelSim)<span>7/10</span></b><div class="bar-track"><div class="bar-fill" data-w="70"></div></div></div>
+      <div class="row"><b>LabVIEW &amp; Zelio<span>7/10</span></b><div class="bar-track"><div class="bar-fill" data-w="70"></div></div></div>
+      <div class="row"><b>AMDEC, maintenance, diagnostics<span>8/10</span></b><div class="bar-track"><div class="bar-fill" data-w="80"></div></div></div>
+    </div>
+    <div class="skill-cats">
+      <div class="skill-cat reveal"><h4>Embedded &amp; IoT</h4><div class="chips"><span class="chip">ESP32</span><span class="chip">Arduino IDE</span><span class="chip">MPLAB</span><span class="chip">MQTT</span><span class="chip">Wi-Fi</span><span class="chip">Capteurs</span><span class="chip">Solaire</span></div></div>
+      <div class="skill-cat reveal"><h4>Code &amp; IA</h4><div class="chips"><span class="chip">C</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">VHDL</span><span class="chip">OpenCV</span><span class="chip">FDprocess</span><span class="chip">Pandas</span></div></div>
+      <div class="skill-cat reveal"><h4>Conception &amp; Simul.</h4><div class="chips"><span class="chip">MATLAB</span><span class="chip">Simulink</span><span class="chip">COMSOL</span><span class="chip">Ansoft</span><span class="chip">ISIS/ARES</span><span class="chip">EasyEDA</span><span class="chip">ModelSim</span><span class="chip">Logisim</span></div></div>
+      <div class="skill-cat reveal"><h4>Soft skills</h4><div class="chips"><span class="chip">Esprit d'équipe</span><span class="chip">Organisation</span><span class="chip">Proactivité</span><span class="chip">Responsabilité</span><span class="chip">Présentation</span><span class="chip">Leadership</span></div></div>
+      <div class="skill-cat reveal"><h4>Langues</h4><div class="chips"><span class="chip">Arabe — natif</span><span class="chip">Tamazight — natif</span><span class="chip">Français — bon</span><span class="chip">Anglais — intermédiaire</span></div></div>
+      <div class="skill-cat reveal"><h4>Outils</h4><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">LabVIEW</span><span class="chip">Zelio</span><span class="chip">PowerPoint</span></div></div>
     </div>
   </div>
-</section>
+</div></section>
 
-<section id="competitions">
-  <div class="wrap">
-    <div class="sec-label">03 // Competitions &amp; Leadership</div>
-    <h2>Tested in the arena</h2>
-    <p class="lead">Technical competitions and leadership roles that forged the engineer behind the portfolio.</p>
-    <div class="comp-grid">
-      <div class="card comp reveal"><div class="comp-num">04/2026</div><div><h3>COCIA 2026 — Smart Systems &amp; Intelligent Robotics</h3><p>Presented the IoT surveillance robot at École Supérieure de Technologie de Casablanca, with M’barek EL-LOUH. Embedded systems, IoT & digital innovation under Prof. Youssef Mejdoub.</p><div class="org">EST Casablanca · Team with M'barek EL-LOUH</div></div></div>
-      <div class="card comp reveal"><div class="comp-num">2026</div><div><h3>Rally IA Future Lab — Merzouga</h3><p>4 days of AI + IoT innovation under the High Royal Directives, co-organized by the Ministry of Digital Transition &amp; UM6P. 1,000+ young Moroccan innovators.</p><div class="org">Ministry of Digital Transition × UM6P · MarocDigital2030</div></div></div>
-      <div class="card comp reveal"><div class="comp-num">2025→</div><div><h3>Vice-President — InTech Club FSTE</h3><p>Co-founder/leader of the intelligent-technologies club: hands-on electronics &amp; embedded courses, hackathons and workshops for engineering students.</p><div class="org">FST Errachidia · Since 2025</div></div></div>
-      <div class="card comp reveal"><div class="comp-num">2025→</div><div><h3>Deputy Campus Director — Hult Prize</h3><p>Organizing &amp; coordinating the global Hult Prize technology competition addressing Drâa-Tafilalet challenges — social impact &amp; tech entrepreneurship.</p><div class="org">Hult Prize Foundation · Errachidia · Since 2025</div></div></div>
-      <div class="card comp reveal"><div class="comp-num">2026</div><div><h3>Journées d'étude — Agoudal / Imilchil</h3><p>Territorial development &amp; applied research event organized with Association AKHIAM — sustainable territories, research for rural Morocco.</p><div class="org">Association AKHIAM · May 2026</div></div></div>
-      <div class="card comp reveal"><div class="comp-num">2026</div><div><h3>Cisco IoT Certification</h3><p>“Introduction à l'IoT” — Cisco Networking Academy, earned during the Smart Sensors &amp; IoT module (Prof. Yassine KHAZRI).</p><div class="org">Cisco Networking Academy · Certified</div></div></div>
+<!-- ========= 07 // CONTACT ========= -->
+<section id="contact"><div class="wrap">
+  <div class="sec-head"><span class="sec-idx">07</span><span class="sec-label">Contact</span></div>
+  <h2>Parlons de votre <span class="grad">prochain projet</span></h2>
+  <p class="lead">Mission freelance, stage PFE, ou juste une conversation technique — email &lt; 24h.</p>
+  <div class="contact-grid">
+    <div>
+      <div class="c-row"><span>📧</span><div><small>Email</small><a href="mailto:aitallouhassan@proton.me">aitallouhassan@proton.me</a></div></div>
+      <div class="c-row"><span>📱</span><div><small>Téléphone / WhatsApp</small><a href="https://wa.me/212639636712">+212 639-636712</a></div></div>
+      <div class="c-row"><span>💼</span><div><small>LinkedIn</small><a href="https://www.linkedin.com/in/hassan-ait-allou" target="_blank" rel="noopener">/in/hassan-ait-allou</a></div></div>
+      <div class="c-row"><span>⌥</span><div><small>GitHub</small><a href="https://github.com/hassanaitallou" target="_blank" rel="noopener">github.com/hassanaitallou</a></div></div>
+      <div class="c-row"><span>📍</span><div><small>Base</small>Errachidia, Maroc · UTC+1 · remote disponible</div></div>
     </div>
+    <form action="mailto:aitallouhassan@proton.me" method="post" enctype="text/plain">
+      <input type="text" name="nom" placeholder="Votre nom" required>
+      <input type="email" name="email" placeholder="Votre email" required>
+      <select name="topic"><option>Projet IoT / embarqué</option><option>Mission freelance</option><option>Internship / stage</option><option>Tutorat</option><option>Autre</option></select>
+      <textarea name="message" rows="5" placeholder="Décrivez votre projet ou besoin..." required></textarea>
+      <button class="btn" type="submit">Envoyer ✉️</button>
+    </form>
   </div>
-</section>
+</div></section>
 
-<section id="experience" style="background:var(--bg2)">
-  <div class="wrap">
-    <div class="sec-label">04 // Track record</div>
-    <h2>Experience</h2>
-    <div class="tl">
-      <div class="tl-item reveal"><div class="tl-date">JUL — AUG 2026</div><h3>Projet de Fin d'Année — Capgemini Engineering</h3><div class="tl-org"><span class="tl-badge">PFA</span>Embedded Systems Internship · Casablanca</div><p>Predictive-maintenance solution for electric motors: failure-mode study, IoT + MQTT + AI for real-time monitoring, Python/MATLAB/Simulink data processing, EarlyFault dashboard. (Confidential — description only)</p></div>
-      <div class="tl-item reveal"><div class="tl-date">JUL — AUG 2025</div><h3>Initiation Internship — Coopérative Halib Rich</h3><div class="tl-org"><span class="tl-badge">SENSORS</span>Embedded &amp; IoT Intern · Rich</div><p>Vibration-sensor integration for motor monitoring; temperature-surveillance system development.</p></div>
-      <div class="tl-item reveal"><div class="tl-date">OCT 2025 — PRESENT</div><h3>Vice-President — InTech Club FSTE · Deputy — Hult Prize</h3><div class="tl-org"><span class="tl-badge">LEADERSHIP</span>Intelligent Technologies Club · Hult Prize Foundation · Errachidia</div><p>Hands-on workshops &amp; trainings for engineering students; coordinating the regional Hult Prize competition.</p></div>
-      <div class="tl-item reveal"><div class="tl-date">JAN — MAY 2024</div><h3>Electronics Technician — OB ELECTRONIQUE</h3><div class="tl-org"><span class="tl-badge">ELECTRONICS</span>Test &amp; Repair · Casablanca · 5 months</div><p>Schematics and PCB reading; electronic-board testing, diagnostics &amp; repair.</p></div>
-      <div class="tl-item reveal"><div class="tl-date">APR — MAY 2023</div><h3>End-of-Studies Internship — T2S Group</h3><div class="tl-org"><span class="tl-badge">BIOMEDICAL</span>Maintenance &amp; Diagnostics · Bouskoura, Casablanca</div><p>Ultrasound &amp; MRI equipment analysis, AMDEC failure analysis, preventive maintenance.</p></div>
-    </div>
-  </div>
-</section>
+<footer><div class="wrap"><span>© <span id="year"></span> Hassan AIT ALLOU — Ingénieur SEIT &amp; IoT · Errachidia, Maroc</span><a href="https://hassanaitallou.github.io">hassanaitallou.github.io</a></div></footer>
 
-<section id="skills">
-  <div class="wrap">
-    <div class="sec-label">05 // Skills</div>
-    <h2>Stack &amp; proficiency</h2>
-    <div class="bars">
-      <div class="bar-row"><b>Embedded C / C++ &amp; firmware<span class="mono">90%</span></b><div class="bar-track"><div class="bar-fill" data-w="90"></div></div></div>
-      <div class="bar-row"><b>Python (Dash, OpenCV, Pandas)<span class="mono">85%</span></b><div class="bar-track"><div class="bar-fill" data-w="85"></div></div></div>
-      <div class="bar-row"><b>IoT — MQTT, sensors, telemetry<span class="mono">88%</span></b><div class="bar-track"><div class="bar-fill" data-w="88"></div></div></div>
-      <div class="bar-row"><b>MATLAB / Simulink<span class="mono">80%</span></b><div class="bar-track"><div class="bar-fill" data-w="80"></div></div></div>
-      <div class="bar-row"><b>PCB design (EasyEDA, ISIS/ARES)<span class="mono">78%</span></b><div class="bar-track"><div class="bar-fill" data-w="78"></div></div></div>
-      <div class="bar-row"><b>VHDL / FPGA (ModelSim)<span class="mono">65%</span></b><div class="bar-track"><div class="bar-fill" data-w="65"></div></div></div>
-      <div class="bar-row"><b>Telecom foundations (SEIT)<span class="mono">75%</span></b><div class="bar-track"><div class="bar-fill" data-w="75"></div></div></div>
-      <div class="bar-row"><b>French · Arabic · English<span class="mono">FR/AR C1 · EN B1</span></b><div class="bar-track"><div class="bar-fill" data-w="75"></div></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" style="background:var(--bg2)">
-  <div class="wrap">
-    <div class="sec-label">06 // Contact</div>
-    <h2>Let’s build something real</h2>
-    <div class="contact-grid">
-      <div>
-        <div class="c-row"><span>📧</span><div><small>Email</small><a href="mailto:aitallouhassan@proton.me">aitallouhassan@proton.me</a></div></div>
-        <div class="c-row"><span>📱</span><div><small>Phone / WhatsApp</small><a href="https://wa.me/212639636712">+212 639-636712</a></div></div>
-        <div class="c-row"><span>💼</span><div><small>LinkedIn</small><a href="https://www.linkedin.com/in/hassan-ait-allou" target="_blank" rel="noopener">linkedin.com/in/hassan-ait-allou</a></div></div>
-        <div class="c-row"><span>⌥</span><div><small>GitHub</small><a href="https://github.com/hassanaitallou" target="_blank" rel="noopener">github.com/hassanaitallou</a></div></div>
-        <div class="c-row"><span>📍</span><div><small>Base</small>Errachidia, Morocco · UTC+1 · Remote-friendly</div></div>
-        <p style="color:var(--muted);font-size:.83rem">Response &lt; 24h · Open to: freelance engineering · PFE/internship · remote IoT/embedded roles · tutoring.</p>
-      </div>
-      <form action="mailto:aitallouhassan@proton.me" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <select name="service"><option>IoT / Embedded project</option><option>Predictive maintenance consultation</option><option>Data analysis (Python/MATLAB)</option><option>Freelance / contract</option><option>Tutoring</option><option>Other</option></select>
-        <textarea name="message" rows="5" placeholder="Describe your project or idea..." required></textarea>
-        <button class="btn" type="submit">Send message ✉️</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<footer><div class="wrap">© <span id="year"></span> Hassan AIT ALLOU — Embedded Systems &amp; IoT Engineer · Errachidia, Morocco · <a href="https://github.com/hassanaitallou.github.io">hassanaitallou.github.io</a></div></footer>
-
-<div id="lightbox" role="dialog" aria-label="Photo"><img id="lightboxImg" src="" alt="Project photo"><button id="lightboxClose" aria-label="Close">×</button></div>
+<div id="lightbox" role="dialog"><img id="lightboxImg" src="" alt=""><button id="lightboxClose">×</button></div>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// progress bar
+const bar = document.getElementById('progress');
+const updateProgress = () => { const h = document.documentElement; const max = h.scrollHeight - h.clientHeight; bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%'; };
+updateProgress();
+window.addEventListener('scroll', updateProgress, { passive: true });
 
 // cursor glow
 const glow = document.getElementById('glow');
 window.addEventListener('pointermove', e => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; }, { passive: true });
 
-// reveal on scroll
-const io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } }), { threshold: 0.12 });
+// reveal
+const io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// typing effect
-const phrases = ['ESP32 firmware engineer','Predictive-maintenance AI','IoT systems from scratch','Embedded & telecom student','COCIA 2026 presenter'];
+// typing
+const phrases = ['Engineering student — SEIT · FST Errachidia','PFA Capgemini Engineering · 2026','IoT · Predictive Maintenance · AI','Vice-President · InTech Club FSTE'];
 let pi = 0, ci = 0, del = false;
 const typed = document.getElementById('typed');
-function tick() {
-  const full = phrases[pi];
-  typed.textContent = full.slice(0, ci);
-  if (!del && ci < full.length) { ci++; setTimeout(tick, 42); }
-  else if (!del) { del = true; setTimeout(tick, 1500); }
-  else if (ci > 0) { ci--; setTimeout(tick, 16); }
-  else { del = false; pi = (pi + 1) % phrases.length; setTimeout(tick, 350); }
-}
+function tick() { const full = phrases[pi]; typed.textContent = full.slice(0, ci); if (!del && ci < full.length) { ci++; setTimeout(tick, 38); } else if (!del) { del = true; setTimeout(tick, 1400); } else if (ci > 0) { ci--; setTimeout(tick, 14); } else { del = false; pi = (pi + 1) % phrases.length; setTimeout(tick, 350); } }
 tick();
 
-// animated counters
-const counters = document.querySelectorAll('.ms b[data-count]');
-const cio = new IntersectionObserver(entries => entries.forEach(en => {
-  if (en.isIntersecting) {
-    const target = +en.target.dataset.count, dur = 1600, t0 = performance.now();
-    const step = now => { const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(2, -10 * p); en.target.textContent = Math.round(target * (p === 1 ? 1 : e)).toLocaleString(); if (p < 1) requestAnimationFrame(step); };
-    requestAnimationFrame(step); cio.unobserve(en.target);
-  }
-}), { threshold: .9 });
+// counters
+const counters = document.querySelectorAll('.qf b[data-count]');
+const cio = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { const t = +en.target.dataset.count, t0 = performance.now(), dur = 1400; const step = now => { const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(2, -10 * p); en.target.textContent = Math.round(t * (p === 1 ? 1 : e)).toLocaleString('fr-FR'); if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); cio.unobserve(en.target); } }), { threshold: .9 });
 counters.forEach(c => cio.observe(c));
 
-// animated skill bars
+// bars
 const bars = document.querySelectorAll('.bar-fill');
-const bio = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.style.width = en.target.dataset.w + '%'; bio.unobserve(en.target); } }), { threshold: .4 });
+const bio = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.style.width = en.target.dataset.w + '%'; bio.unobserve(en.target); } }), { threshold: .3 });
 bars.forEach(b => bio.observe(b));
 
-// project filters
-const grid = document.getElementById('projGrid');
-document.getElementById('filters').addEventListener('click', e => {
-  const btn = e.target.closest('.fbtn'); if (!btn) return;
-  document.querySelectorAll('.fbtn').forEach(b => b.classList.toggle('active', b === btn));
-  const f = btn.dataset.filter;
-  grid.querySelectorAll('.proj').forEach(card => card.classList.toggle('hidden', f !== 'all' && card.dataset.cat !== f));
-});
+// filter
+document.getElementById('filters').addEventListener('click', e => { const btn = e.target.closest('.fbtn'); if (!btn) return; document.querySelectorAll('.fbtn').forEach(b => b.classList.toggle('active', b === btn)); const f = btn.dataset.filter; const cards = document.querySelectorAll('#projGrid .proj'); let vis = 0; cards.forEach(c => { const show = f === 'all' || c.dataset.cat === f; c.classList.toggle('hidden', !show); if (show) vis++; }); const out = document.getElementById('projCount'); if (out) out.textContent = vis + ' projet' + (vis > 1 ? 's' : ''); });
 
 // lightbox
-const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lightboxImg'), lbClose = document.getElementById('lightboxClose');
-document.querySelectorAll('.proj-photos img').forEach(img => img.addEventListener('click', () => { lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('open'); }));
-lbClose.addEventListener('click', () => lb.classList.remove('open'));
+const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lightboxImg');
+document.querySelectorAll('.proj-shots img').forEach(img => img.addEventListener('click', () => { lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('open'); }));
+document.getElementById('lightboxClose').addEventListener('click', () => lb.classList.remove('open'));
 lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
 window.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
 
-// fake terminal typing
-const termLines = [
-  { t: '$ whoami', c: 'g', d: 30 },
-  { t: 'hassan_aitallou — embedded & iot engineer', c: '', d: 18 },
-  { t: '$ cat stack.txt', c: 'g', d: 30 },
-  { t: 'ESP32 · C/C++ · Python · MQTT · Simulink · VHDL', c: 'c', d: 12 },
-  { t: '$ ./deploy --portfolio', c: 'g', d: 30 },
-  { t: '✔ Compiling... OK', c: 'y', d: 350 },
-  { t: '✔ Live at hassanaitallou.github.io', c: 'g', d: 12 },
-];
-const term = document.getElementById('termBody');
-let li = 0, scrollTick = 0;
-async function typeTerm() {
-  const line = termLines[li];
-  const row = document.createElement('div');
-  if (line.c) row.className = line.c;
-  term.appendChild(row);
-  for (let i = 0; i <= line.t.length; i++) { row.textContent = line.t.slice(0, i); await new Promise(r => setTimeout(r, line.d)); }
-  li = (li + 1) % termLines.length;
-  if (li === 0) { term.innerHTML = ''; }
-  setTimeout(typeTerm, 400);
-}
+// terminal
+const termLines = [{t:'$ whoami',c:'g',d:28},{t:'hassan_aitallou — embedded & iot',c:'',d:18},{t:'$ cat parcours.txt',c:'g',d:28},{t:'PFA Capgemini · Rally IA · COCIA',c:'y',d:15},{t:'$ ./cv --open',c:'g',d:30},{t:'✔ PDF prêt — tu me contactes ?',c:'c',d:12}];
+const term = document.getElementById('termBody'); let ti = 0;
+async function typeTerm() { const line = termLines[ti]; const row = document.createElement('div'); if (line.c) row.className = line.c; term.appendChild(row); for (let i = 0; i <= line.t.length; i++) { row.textContent = line.t.slice(0, i); await new Promise(r => setTimeout(r, line.d)); } ti = (ti + 1) % termLines.length; if (ti === 0) term.innerHTML = ''; setTimeout(typeTerm, 380); }
 setTimeout(typeTerm, 600);
 </script>
 </body>
