@@ -2,11 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Hassan AIT ALLOU | Embedded Systems & IoT Engineer</title>
 <meta name="description" content="Embedded systems and IoT engineer: ESP32, Arduino, Python, MATLAB/Simulink, predictive maintenance with IoT + MQTT + AI. COCIA 2026, Rally IA Future Lab finalist, Capgemini Engineering.">
 <meta property="og:title" content="Hassan AIT ALLOU — Embedded Systems & IoT Engineer">
-<meta property="og:image" content="assets/profile.jpg">
+<meta property="og:description" content="ESP32, IoT, predictive maintenance, MQTT/AI, COCIA 2026, Rally IA Future Lab. Final-year embedded systems engineer at Capgemini Engineering.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hassanaitallou.github.io/">
+<meta property="og:image" content="https://hassanaitallou.github.io/assets/profile.jpg">
+<meta name="theme-color" content="#05070f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="assets/profile.jpg">
 <link rel="icon" href="assets/profile.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -191,7 +199,41 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--cyan);bo
 footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--muted);font-size:.79rem}
 .reveal{opacity:0;transform:translateY(30px);transition:all .8s ease}
 .reveal.visible{opacity:1;transform:none}
-@media(max-width:760px){nav ul{display:none}}
+@media(max-width:1024px){.proj-grid{grid-template-columns:repeat(2,1fr)}.comp-grid{grid-template-columns:1fr}.hero-grid{gap:36px}}
+@media(max-width:760px){
+  nav ul{display:none}
+  .logo{font-size:.9rem}
+  header .wrap{padding-top:88px}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .ring{width:200px;height:200px}
+  .hud{display:none}
+  h1{font-size:clamp(1.9rem,9vw,2.6rem)}
+  .cta-row .btn{flex:1 1 100%;justify-content:center}
+  .mini-stats{gap:18px}
+  .ms b{font-size:1.2rem}
+  .sec-label{font-size:.64rem}
+  section{padding:64px 0}
+  .proj-photos{flex-wrap:wrap}
+  .bars{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .terminal{font-size:.85em}
+  .term-body{min-height:180px;font-size:.68rem}
+  .wrap{padding:0 18px}
+}
+@media(max-width:480px){
+  h1{font-size:1.85rem}
+  .hero-card{transform:scale(.92);transform-origin:center top}
+  .tagline{font-size:.86rem}
+  .card{padding:20px}
+  .proj-img{height:140px}
+  .ms{width:45%}
+  .cta-row{gap:10px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+@media print { nav,#glow,.marquee,.filters{display:none!important} body{background:#fff;color:#000} }
 </style>
 </head>
 <body>
