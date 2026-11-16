@@ -29,9 +29,9 @@ a{color:var(--teal);text-decoration:none}:focus-visible{outline:2px solid var(--
 #progress{position:fixed;top:0;left:0;height:2px;width:0%;z-index:200;background:linear-gradient(90deg,var(--teal),var(--violet),var(--emerald));transition:width .12s linear}
 nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,18,32,.8);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:600;font-size:.95rem}.brand b{color:var(--teal)}
-nav ul{display:flex;gap:12px;list-style:none;align-items:center}nav ul a{color:var(--muted);font-size:.74rem;font-weight:500;font-family:var(--mono);display:flex;align-items:center;gap:5px}nav ul a .n{color:var(--teal);font-size:.66rem}nav ul a:hover{color:var(--teal)}
-.gh{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);color:var(--text);padding:8px 16px;border-radius:8px;font-size:.8rem;font-family:var(--mono);transition:.25s}.gh:hover{border-color:var(--teal);box-shadow:0 0 18px rgba(56,189,248,.2)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:600;font-size:.85rem;white-space:nowrap}.brand b{color:var(--teal)}
+nav ul{display:flex;gap:9px;list-style:none;align-items:center;white-space:nowrap}nav ul a{color:var(--muted);font-size:.68rem;font-weight:500;font-family:var(--mono);display:flex;align-items:center;gap:4px}nav ul a .n{color:var(--teal);font-size:.6rem}nav ul a:hover{color:var(--teal)}
+.gh{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);color:var(--text);padding:8px 16px;border-radius:8px;font-size:.8rem;font-family:var(--mono);white-space:nowrap;transition:.25s}.gh:hover{border-color:var(--teal);box-shadow:0 0 18px rgba(56,189,248,.2)}@media(max-width:1360px){.gh{display:none}}
 header{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
 #bannerBg{position:absolute;inset:0;background:url('assets/banner.jpg') center/cover no-repeat;opacity:.22;filter:saturate(.7)}
 #bannerBg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,18,32,.97) 0%,rgba(10,18,32,.88) 45%,rgba(10,18,32,.55) 100%),linear-gradient(180deg,transparent 60%,var(--bg) 100%)}
